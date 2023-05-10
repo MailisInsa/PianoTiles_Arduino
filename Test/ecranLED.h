@@ -15,6 +15,9 @@ class EcranLED{
     public:
     EcranLED(); //constructeur
     uint64_t* getTab();
+    BarreLED* getDerniereColonne();
+    void AllumerCase();
+    void Defiler();
 };
 
 

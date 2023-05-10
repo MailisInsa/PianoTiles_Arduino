@@ -1,5 +1,6 @@
 #include "grove_two_rgb_led_matrix.h"
 #include "caseLED.h"
+#include <random>
 
 
 #ifndef _BARRELED_H_
@@ -17,6 +18,9 @@ class BarreLED{
     void FaireDefiler();
     BarreLED* getSuivante();
     void assignSuivante(BarreLED* b);
+    void AllumerCaseRandom();
+    //ajouter une fonction pour allumer l'une des cases aléatoirement
+    
 };
 
 

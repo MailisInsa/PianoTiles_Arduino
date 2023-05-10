@@ -77,10 +77,15 @@ void loop() {
 //    }
     matrix.displayFrames(pic5, 2000, true, 1);
     delay(2000);
-    matrix.displayFrames(pic3, 2000, true, 1);
-    delay(2000);
     matrix.displayFrames(tableau, 2000, true, 1);
     delay(2000);
-    
+    ecran.AllumerCase();
+    tableau = ecran.getTab();
+    matrix.displayFrames(tableau, 2000, true, 1);
+    delay(2000);
+    ecran.Defiler();
+    tableau = ecran.getTab();
+    matrix.displayFrames(tableau, 2000, true, 1);
+    delay(2000);
     
 }
