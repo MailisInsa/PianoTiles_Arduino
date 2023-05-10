@@ -79,7 +79,7 @@ void loop() {
     delay(2000);
     matrix.displayFrames(tableau, 2000, true, 1);
     delay(2000);
-    ecran.AllumerCase();
+    ecran.AllumerCase3();
     tableau = ecran.getTab();
     matrix.displayFrames(tableau, 2000, true, 1);
     delay(2000);

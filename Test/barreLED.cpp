@@ -10,8 +10,9 @@ BarreLED::BarreLED(){
     }
     ligne[0]->allumer(); //lignes pour tester
     ligne[2]->allumer();
-    suivante = nullptr;
+    //suivante = nullptr;
 }
+
 void BarreLED::FaireDefiler(){
     suivante->ligne[0] = ligne[0];
     suivante->ligne[1] = ligne[1];
@@ -19,8 +20,8 @@ void BarreLED::FaireDefiler(){
     suivante->ligne[3] = ligne[3];
 }
 
-CaseLED BarreLED::getLigne(int i){
-    return(*ligne[i]);
+CaseLED* BarreLED::getLigne(int i){
+    return(ligne[i]);
 }
 
 BarreLED* BarreLED::getSuivante(){

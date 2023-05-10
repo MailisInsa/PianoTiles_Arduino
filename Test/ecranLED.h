@@ -18,6 +18,13 @@ class EcranLED{
     BarreLED* getDerniereColonne();
     void AllumerCase();
     void Defiler();
+    //void TESTDefiler();
+    
+    void AllumerCase0();
+    void AllumerCase1();
+    void AllumerCase2();
+    void AllumerCase3();    
+    
 };
 
 

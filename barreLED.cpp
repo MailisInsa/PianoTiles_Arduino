@@ -2,8 +2,7 @@
 
 
 BarreLED::BarreLED(){
-    ligne[0] = CaseLED.allumer();
-    ligne[2] = CaseLED.allumer();
+    ligne = {0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff}
     suivante = nullptr;
 }
 void BarreLED::FaireDefiler(){

@@ -8,7 +8,7 @@
 class BarreLED{
     protected:
     //une barre de LED comprend 4 cases
-    CaseLED ligne[4];
+    uint64_t ligne[8];
     BarreLED* suivante;
 
     public:
