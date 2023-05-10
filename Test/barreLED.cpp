@@ -13,6 +13,11 @@ BarreLED::BarreLED(){
     //suivante = nullptr;
 }
 
+void BarreLED::assignLigne(CaseLED* c){
+    ligne = c;
+}
+
+
 void BarreLED::FaireDefiler(){
     suivante->ligne[0] = ligne[0];
     suivante->ligne[1] = ligne[1];

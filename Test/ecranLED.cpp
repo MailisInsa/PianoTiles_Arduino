@@ -5,10 +5,8 @@
 
 
 EcranLED::EcranLED(){
-    colonne[0] = new BarreLED();
-    for(int i = 1; i<sizeof(colonne); i++){
+    for(int i = 0; i<sizeof(colonne); i++){
         colonne[i] = new BarreLED();
-        colonne[i-1]->assignSuivante(colonne[i]);
     }
     //Test aussi
     colonne[0]->getLigne(1)->allumer();
@@ -32,8 +30,8 @@ uint64_t* EcranLED::getTab(){
     return(tab);
 }
 
-bool EcranLED::getEtatDerniereColonne(int i){
-    return(colonne[7]->getLigne(i)->EstAllume());
+BarreLED* EcranLED::getDerniereColonne(){
+    return(colonne[7]);
 }
 
 void EcranLED::AllumerCase(){
@@ -42,7 +40,7 @@ void EcranLED::AllumerCase(){
 
 void EcranLED::Defiler(){
     for(int i = sizeof(colonne)-1; i>0; i--){
-        colonne[i-1]->FaireDefiler();
+        colonne[i]->assignLigne(colonne[i-1]);
     }
 }
 
@@ -57,19 +55,31 @@ void EcranLED::TESTDefiler(){
 */
 
 void EcranLED::AllumerCase0(){
-    colonne[0]->getLigne(0).allumer();
+    colonne[0]->getLigne(0)->allumer();
+    colonne[0]->getLigne(1)->eteindre();
+    colonne[0]->getLigne(2)->eteindre();
+    colonne[0]->getLigne(3)->eteindre();
 }
 
 void EcranLED::AllumerCase1(){
-    colonne[0]->getLigne(1).allumer();
+    colonne[0]->getLigne(0)->eteindre();
+    colonne[0]->getLigne(1)->allumer();
+    colonne[0]->getLigne(2)->eteindre();
+    colonne[0]->getLigne(3)->eteindre();
 }
 
 void EcranLED::AllumerCase2(){
-    colonne[0]->getLigne(2).allumer();
+    colonne[0]->getLigne(0)->eteindre();
+    colonne[0]->getLigne(1)->eteindre();
+    colonne[0]->getLigne(2)->allumer();
+    colonne[0]->getLigne(3)->eteindre();
 }
 
 void EcranLED::AllumerCase3(){
-    colonne[0]->getLigne(3).allumer();
+    colonne[0]->getLigne(0)->eteindre();
+    colonne[0]->getLigne(1)->eteindre();
+    colonne[0]->getLigne(2)->eteindre();
+    colonne[0]->getLigne(3)->allumer();
 }
 
 
