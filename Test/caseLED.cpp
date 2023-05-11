@@ -17,5 +17,5 @@ void CaseLED::eteindre(){
     LedMat[1] = {0xff};
     }
 bool CaseLED::EstAllume(){return(allume);}
-uint64_t CaseLED::getMat1(){return(LedMat[0]);};
-uint64_t CaseLED::getMat2(){return(LedMat[1]);};
+uint8_t CaseLED::getMat1(){return(LedMat[0]);};
+uint8_t CaseLED::getMat2(){return(LedMat[1]);};

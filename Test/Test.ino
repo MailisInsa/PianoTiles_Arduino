@@ -59,8 +59,9 @@ uint8_t pic3[] = {0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,
                   0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,
                   0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,
                  };
+                 
 void loop() {
-    uint64_t* tableau;
+    uint8_t* tableau;
     tableau = ecran.getTab();
 //  uint64_t* cell[2];
 //    cell[0] = {0xaa};
@@ -75,7 +76,10 @@ void loop() {
 //    for(int i=0; i<8; i++){
 //        colonne[i] = ligne;
 //    }
-    matrix.displayFrames(pic5, 2000, true, 1);
+    for(int i=0; i<64; i++){
+      pic3[i] = tableau[i];
+    }
+    matrix.displayFrames(pic3, 2000, true, 1);
     delay(2000);
     matrix.displayFrames(tableau, 2000, true, 1);
     delay(2000);
