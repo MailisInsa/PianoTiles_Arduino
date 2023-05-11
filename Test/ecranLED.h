@@ -10,11 +10,11 @@ class EcranLED{
     protected:
     //un écran LED comprend 8 barres de LED
     BarreLED* colonne[8];
-    uint8_t tab[64];
+    uint64_t tab[64];
 
     public:
     EcranLED(); //constructeur
-    uint8_t* getTab();
+    uint64_t* getTab();
     BarreLED* getDerniereColonne();
     void AllumerCase();
     void Defiler();

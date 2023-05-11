@@ -61,7 +61,7 @@ uint8_t pic3[] = {0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,
                  };
                  
 void loop() {
-    uint8_t* tableau;
+    uint64_t* tableau;
     tableau = ecran.getTab();
 //  uint64_t* cell[2];
 //    cell[0] = {0xaa};

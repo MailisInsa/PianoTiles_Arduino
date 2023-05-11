@@ -81,6 +81,3 @@ void EcranLED::AllumerCase3(){
     colonne[0]->getLigne(2)->eteindre();
     colonne[0]->getLigne(3)->allumer();
 }
-
-
-
