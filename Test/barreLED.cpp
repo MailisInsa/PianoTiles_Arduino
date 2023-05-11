@@ -5,7 +5,7 @@
 
 
 BarreLED::BarreLED(){
-    for(int i = 0; i<sizeof(ligne); i++){
+    for(int i = 0; i<4; i++){
         ligne[i] = new CaseLED();
     }
     ligne[0]->allumer(); //lignes pour tester
@@ -13,8 +13,10 @@ BarreLED::BarreLED(){
     //suivante = nullptr;
 }
 
-void BarreLED::assignLigne(CaseLED* c){
-    ligne = c;
+void BarreLED::assignLigne(BarreLED* c){
+    for(int i = 0; i<4; i++){
+        ligne[i] = c->ligne[i];
+    }
 }
 
 

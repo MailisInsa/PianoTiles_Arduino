@@ -14,8 +14,8 @@ class BarreLED{
 
     public:
     BarreLED(); //constructeur
-    void assignLigne(CaseLED* c);
-    CaseLED getLigne(int i);
+    void assignLigne(BarreLED* c);
+    CaseLED* getLigne(int i);
     void FaireDefiler();
     BarreLED* getSuivante();
     void assignSuivante(BarreLED* b);
