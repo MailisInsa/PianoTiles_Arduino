@@ -31,7 +31,7 @@ uint64_t* EcranLED::getTab(){
 }
 
 BarreLED* EcranLED::getDerniereColonne(){
-    return(colonne[7]);
+    return(colonne[0]);
 }
 
 void EcranLED::AllumerCase(){

@@ -46,13 +46,14 @@ void Game::updateGame() {
   bool touched4 = _touch4.Touched4();
 
   // Vérifier si le joueur a appuyé sur le bon capteur tactile
-  if (touched1) {
+  //&ecran.getDerniereCeolonne()->getLigne(0).EstAllume() //-> true si la case 0 est allumée
+  if (touched1) {//&ecranLed.getDerniereCeolonne()->getLigne(0).EstAllume()
     Score++;
-  } else if (touched2) {
+  } else if (touched2) {//&ecranLed.getDerniereCeolonne()->getLigne(1).EstAllume()
     Score++;
-  } else if (touched3) {
+  } else if (touched3) {//&ecranLed.getDerniereCeolonne()->getLigne(2).EstAllume()
     Score++;
-  } else if (touched4 ) {
+  } else if (touched4 ) {//&ecranLed.getDerniereCeolonne()->getLigne(3).EstAllume()
     Score++;
   }
   else{

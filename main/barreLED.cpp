@@ -8,8 +8,6 @@ BarreLED::BarreLED(){
     for(int i = 0; i<4; i++){
         ligne[i] = new CaseLED();
     }
-    ligne[0]->allumer(); //lignes pour tester
-    ligne[2]->allumer();
     //suivante = nullptr;
 }
 
