@@ -38,6 +38,7 @@ void Game::chooseMode() {
      mode = 1;
    }
 }
+
  void Game::AfficheMat(){
   int i=0;
    uint8_t pic3[] = {0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,

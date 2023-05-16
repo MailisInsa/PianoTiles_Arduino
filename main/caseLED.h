@@ -7,13 +7,24 @@ class CaseLED{
     protected:
     //état de la case soit allume = true si LED allumée allume = false si éteinte
     bool allume;
+
+    //Matrice contenant la couleur de chaque LED
     uint64_t LedMat[2];
 
     public:
-    CaseLED(); //constructeur
-    void allumer(); //fonction pour allumer la case
-    void eteindre(); //fonction pour éteindre la case
-    bool EstAllume(); //méthode pour connaître l'état de la LED
+    //Constructeur
+    CaseLED();
+
+    //Allumer une case donc les 2 LEDs
+    void allumer();
+
+    //Eteindre une case
+    void eteindre();
+
+    //Permet de connaitre l'état de la case LED
+    bool EstAllume();
+
+    //Permet d'obtenir la valeur de chacune des LED de la case
     uint64_t getMat1();
     uint64_t getMat2();
 };

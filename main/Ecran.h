@@ -1,5 +1,7 @@
 #include <Arduino.h>
 #include <U8g2lib.h>
+#include <stdexcept>
+#include <iostream>
 
 #ifndef _ECRAN_H_
 #define _ECRAN_H_

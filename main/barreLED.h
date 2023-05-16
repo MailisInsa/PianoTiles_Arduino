@@ -1,25 +1,23 @@
 #include "grove_two_rgb_led_matrix.h"
 #include "caseLED.h"
-#include <random>
-
 
 #ifndef _BARRELED_H_
 #define _BARRELED_H_
 
 class BarreLED{
     protected:
-    //une barre de LED comprend 4 cases
-    CaseLED* ligne[4];
-    BarreLED* suivante;
+    //Une barre de LED comporte 4 Cases
+    CaseLED* ligne[4]; 
 
     public:
-    BarreLED(); //constructeur
-    void assignLigne(BarreLED* c);
-    CaseLED* getLigne(int i);
-    void FaireDefiler();
-    BarreLED* getSuivante();
-    void assignSuivante(BarreLED* b);
-    void AllumerCaseRandom();       //fonction pour allumer l'une des cases aléatoirement
+    //Constructeur
+    BarreLED(); 
+
+    //Fonction permettant de hanger la valeur d'un ligne de LED
+    void assignLigne(BarreLED* c);  
+
+    //Fonction permettant de récupérer la valeur de la barre de LED
+    CaseLED* getLigne(int i);       
 };
 
 

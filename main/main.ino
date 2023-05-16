@@ -58,7 +58,7 @@ void loop() {
   game.Init();
   //game.chooseMode();
   
-  //Tant que pas"Game Over"
+  //Tant que pas "Game Over"
   while (game.Over == false) {
     game.AfficheMat();
     game.updateGame();

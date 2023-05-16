@@ -33,6 +33,10 @@
   }
 
   void Ecran:: EcranGameOver(int Score){
+  //exception
+    if (Score<0)
+      throw invalid_argument("Score should be positive"); //invalid_argument est une exception définie dans stdexcept
+
   //Setup
   //U8G2_SH1107_SEEED_128X128_F_SW_I2C u8g2(U8G2_R0, /* clock=*/ SCL, /* data=*/ SDA, /* reset=*/ U8X8_PIN_NONE);
   U8G2_SSD1306_128X64_ALT0_F_HW_I2C u8g2(U8G2_R0, /* reset=*/ U8X8_PIN_NONE);   // same as the NONAME variant, but may solve the "every 2nd line skipped" problem

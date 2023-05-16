@@ -7,6 +7,7 @@
 #include "Ecran.h"
 #include "ecranLED.h"
 #include "grove_two_rgb_led_matrix.h"
+#include <stdexcept>
 
 class Game {
   protected:
@@ -33,11 +34,10 @@ class Game {
     //void AfficheMat();
 };
 
-class GameDifficile: public Game{
+class GameDifficile:public Game{
   public:
   void updateGame();
   void AfficheMat();
-
 };
 
 class GameFacile:public Game{

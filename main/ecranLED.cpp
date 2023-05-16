@@ -8,10 +8,8 @@ EcranLED::EcranLED(){
     for(int i = 0; i<sizeof(colonne); i++){
         colonne[i] = new BarreLED();
     }
-    //Test aussi
-    colonne[0]->getLigne(1)->allumer();
 
-    //cette boucle for initialise le tab
+    //Cette boucle for initialise le tableau de valeurs pour l'affichage
     for(int i=0; i<64; i=i+8){  
         for(int j=0; j<8; j=j+2){
             tab[i+j] = colonne[i/8]->getLigne(j/2)->getMat1();
@@ -21,6 +19,7 @@ EcranLED::EcranLED(){
 }
 
 uint64_t* EcranLED::getTab(){
+    //On commence par mettre à jour le tab
     for(int i=0; i<64; i=i+8){  
         for(int j=0; j<8; j=j+2){
             tab[i+j] = colonne[i/8]->getLigne(j/2)->getMat1();
@@ -34,16 +33,6 @@ BarreLED* EcranLED::getDerniereColonne(){
     return(colonne[0]);
 }
 
-void EcranLED::AllumerCase(){
-    colonne[0]->AllumerCaseRandom();
-}
-
-void EcranLED::Defiler(){
-    for(int i = sizeof(colonne)-1; i>0; i--){
-        colonne[i]->assignLigne(colonne[i-1]);
-    }
-}
-
 void EcranLED::EteintTout(){
     colonne[0]->getLigne(0)->eteindre();
     colonne[0]->getLigne(1)->eteindre();
@@ -53,28 +42,16 @@ void EcranLED::EteintTout(){
 
 void EcranLED::AllumerCase0(){
     colonne[0]->getLigne(0)->allumer();
-    colonne[0]->getLigne(1)->eteindre();
-    colonne[0]->getLigne(2)->eteindre();
-    colonne[0]->getLigne(3)->eteindre();
 }
 
 void EcranLED::AllumerCase1(){
-    colonne[0]->getLigne(0)->eteindre();
     colonne[0]->getLigne(1)->allumer();
-    colonne[0]->getLigne(2)->eteindre();
-    colonne[0]->getLigne(3)->eteindre();
 }
 
 void EcranLED::AllumerCase2(){
-    colonne[0]->getLigne(0)->eteindre();
-    colonne[0]->getLigne(1)->eteindre();
     colonne[0]->getLigne(2)->allumer();
-    colonne[0]->getLigne(3)->eteindre();
 }
 
 void EcranLED::AllumerCase3(){
-    colonne[0]->getLigne(0)->eteindre();
-    colonne[0]->getLigne(1)->eteindre();
-    colonne[0]->getLigne(2)->eteindre();
     colonne[0]->getLigne(3)->allumer();
 }

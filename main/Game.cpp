@@ -40,7 +40,7 @@ void Game::chooseMode() {
 }
  void GameFacile::AfficheMat(){
   int i=0;
-   uint8_t pic3[] = {0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,
+  uint8_t pic3[]={0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,
                   0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,
                   0xff, 0xff, 0x12, 0xff, 0xff, 0xff, 0xff, 0xff,
                   0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,
@@ -79,7 +79,7 @@ void Game::chooseMode() {
 }
 
 
-void GameFacile::updateGame() {
+void GameFacile::updateGame() {  
   // Code pour gérer le jeu en cours ici
  
   compteur ++;
@@ -117,7 +117,12 @@ void GameFacile::updateGame() {
 
 
 void Game::endGame() {
-  _ecran.EcranGameOver(Score);
+  try{
+    _ecran.EcranGameOver(Score);
+  } catch (invalid_argument& e) {
+    cerr << e.what() <<endl;
+    return -1; //va peut-être planter parce que cette fonction ne retourne rien
+  }
 }
 
 
