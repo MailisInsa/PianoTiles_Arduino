@@ -44,15 +44,12 @@ void EcranLED::Defiler(){
     }
 }
 
-/*
-void EcranLED::TESTDefiler(){
-    colonne[0]->getLigne(0).eteindre();
-    colonne[0]->getLigne(1).allumer();
-    colonne[0]->getLigne(2).eteindre();
-    colonne[0]->getLigne(3).eteindre();
-    colonne[0]->FaireDefiler();
+void EcranLED::EteintTout(){
+    colonne[0]->getLigne(0)->eteindre();
+    colonne[0]->getLigne(1)->eteindre();
+    colonne[0]->getLigne(2)->eteindre();
+    colonne[0]->getLigne(3)->eteindre();
 }
-*/
 
 void EcranLED::AllumerCase0(){
     colonne[0]->getLigne(0)->allumer();
