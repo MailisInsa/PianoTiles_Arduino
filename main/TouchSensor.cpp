@@ -1,5 +1,5 @@
 #include "TouchSensor.h"
-Setup touchsensor correspondant a chaque broche, les mettre en mode INPUT
+//Setup touchsensor correspondant a chaque broche, les mettre en mode INPUT
 void TouchSensor :: setup() {
       pinMode(Pin1, INPUT);
       pinMode(Pin2, INPUT);

@@ -18,6 +18,12 @@ EcranLED::EcranLED(){
     }
 }
 
+void EcranLED::Defiler(){
+    for(int i = sizeof(colonne)-1; i>0; i--){
+        colonne[i]->assignLigne(colonne[i-1]);
+    }
+}
+
 uint64_t* EcranLED::getTab(){
     //On commence par mettre à jour le tab
     for(int i=0; i<64; i=i+8){  

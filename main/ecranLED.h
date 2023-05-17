@@ -17,6 +17,9 @@ class EcranLED{
     //Constructeur
     EcranLED(); 
 
+    //Fonction pour faire défiler les cases à la ligne suivante
+    void Defiler();
+
     //Fonction permettant de récupérer le tableau de valeurs pour l'affichage LED
     uint64_t* getTab();
 

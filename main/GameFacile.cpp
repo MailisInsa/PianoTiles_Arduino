@@ -1,6 +1,9 @@
-#include "GameDifficile.h"
+#include "GameFacile.h"
 
-void GameDifficile::updateGame(){
+
+
+void GameFacile::updateGame() {  
+ //Compteur pour gerer de delai du jeu
   compteur ++;
     
   _ecran.EcranInGame(Score);
@@ -34,9 +37,10 @@ void GameDifficile::updateGame(){
 }
 
 
-void GameDifficile::AfficheMat(){
+//Initialisation de la LED matrix et des variables et gerer l'affichage
+ void GameFacile::AfficheMat(){
   int i=0;
-   uint8_t pic3[] = {0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,
+  uint8_t pic3[]={0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,
                   0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,
                   0xff, 0xff, 0x12, 0xff, 0xff, 0xff, 0xff, 0xff,
                   0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,
@@ -46,15 +50,16 @@ void GameDifficile::AfficheMat(){
                   0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,
                  };
   uint64_t* tableau;
-  i = random(5);
+  i = random(3); // i prendre aleatoirement valeur 0 1 2 3 correspondant a l'affichage aleatoirement des colonnes de MatrixLED
   if (Affiche == false) {
+    //On eteint la MatixLED au debut
     ecranLED.EteintTout();
     tableau = ecranLED.getTab();
     for(int i=0; i<64; i++){
       pic3[i] = tableau[i];
     }
     matrix.displayFrames(pic3, 2000, true, 1);
- 
+  // On allume les colonnes de MatrixLED correspondant au param "i"
     if(i==0){
       ecranLED.AllumerCase0();
     }else if(i==1){
@@ -63,12 +68,6 @@ void GameDifficile::AfficheMat(){
       ecranLED.AllumerCase2();
     }else if(i==3){
       ecranLED.AllumerCase3();
-    }else if(i==4){
-      ecranLED.AllumerCase1();
-      ecranLED.AllumerCase3();
-    }else if(i==5){
-      ecranLED.AllumerCase0();
-      ecranLED.AllumerCase2();
     }
 
     tableau = ecranLED.getTab();

@@ -27,20 +27,8 @@ class Game {
     void Init();
     void chooseMode();
     //void updateGame();
-    void endGame();
+    int endGame();
     //void AfficheMat();
-};
-
-class GameDifficile:public Game{
-  public:
-  void updateGame();
-  void AfficheMat();
-};
-
-class GameFacile:public Game{
-  public:
-  void updateGame();
-  void AfficheMat();
 };
 
 #endif

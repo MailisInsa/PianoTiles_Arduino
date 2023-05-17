@@ -1,4 +1,6 @@
 #include "Game.h"
+#include "GameDifficile.h"
+#include "GameFacile.h"
 #include "TouchSensor.h"
 #include "Ecran.h"
 #include "grove_two_rgb_led_matrix.h"
@@ -24,8 +26,9 @@
 void waitForMatrixReady() {
     delay(1000);
 }
-//Constructeur
-GameDifficile game;
+//Initialisation des variables globales
+//GameDifficile game;
+GameFacile game;
 GroveTwoRGBLedMatrixClass matrix;
 EcranLED ecran;
 
