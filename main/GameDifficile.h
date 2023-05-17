@@ -31,6 +31,30 @@ class Game {
     void updateGame();
     void endGame();
     void AfficheMat();
+  //   // Redéfinition de l'opérateur d'assignation: Copie les membres: Utile pour crrer des variations deu jeu sans reinitialiser tous
+  // GameDifficile& operator=(const GameDifficile& other) {
+  //   // Vérifier l'auto-attribution
+  //   if (this == &other) {
+  //     return *this;
+  //   }
+    
+  //   // Copier les membres de l'objet source vers l'objet courant
+  //   // Assurez-vous de copier tous les membres nécessaires
+    
+  //   // Exemple de copie de membres
+  //   this->_touch1 = other._touch1;
+  //   this->_touch2 = other._touch2;
+  //     this->_touch2 = other._touch2;
+  //     this->_touch2 = other._touch2;
+  //this -> _ecran = other._ecran;
+  //  this -> ecranLED = other.ecranLED;
+   // this -> matrix = other.matrix;
+    
+  //   // ...
+    
+  //   // Retourner l'objet courant
+  //   return *this;
+  // }
 };
 
 #endif

@@ -19,14 +19,11 @@ class Game {
     EcranLED ecranLED;
     GroveTwoRGBLedMatrixClass matrix;
     int compteur;
-
-    
-
   public:
     int mode;
     int Score;
     bool Over;
-    bool Affiche;
+    bool Affiche; // true => MatLED est deja affiche qqc et inverse pour false
     void Init();
     void chooseMode();
     //void updateGame();

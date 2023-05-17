@@ -1,7 +1,7 @@
 #include "Ecran.h"
 #include <U8g2lib.h>
+//Ecran Start du game 
   void Ecran::EcranStart(){
-  //U8G2_SH1107_SEEED_128X128_F_SW_I2C u8g2(U8G2_R0, /* clock=*/ SCL, /* data=*/ SDA, /* reset=*/ U8X8_PIN_NONE);
   U8G2_SSD1306_128X64_ALT0_F_HW_I2C u8g2(U8G2_R0, /* reset=*/ U8X8_PIN_NONE);   // same as the NONAME variant, but may solve the "every 2nd line skipped" problem
   u8g2.begin();
   u8g2.clearBuffer();					// clear the internal memory
@@ -17,9 +17,9 @@
   u8g2.sendBuffer();          // transfer internal memory to the display
   delay(1000);
 }
+//Ecran update le score pendant le Game 
   void Ecran:: EcranInGame(int Score){
   //Setup
-  //U8G2_SH1107_SEEED_128X128_F_SW_I2C u8g2(U8G2_R0, /* clock=*/ SCL, /* data=*/ SDA, /* reset=*/ U8X8_PIN_NONE);
   U8G2_SSD1306_128X64_ALT0_F_HW_I2C u8g2(U8G2_R0, /* reset=*/ U8X8_PIN_NONE);   // same as the NONAME variant, but may solve the "every 2nd line skipped" problem
   u8g2.begin(); 
   u8g2.clearBuffer();
@@ -31,14 +31,13 @@
   u8g2.sendBuffer();					// transfer internal memory to the display
   delay(1000);  
   }
-
+//Ecran quand le jeu est fini, s'affiche le Score
   void Ecran:: EcranGameOver(int Score){
   //exception
     if (Score<0)
       throw invalid_argument("Score should be positive"); //invalid_argument est une exception définie dans stdexcept
 
   //Setup
-  //U8G2_SH1107_SEEED_128X128_F_SW_I2C u8g2(U8G2_R0, /* clock=*/ SCL, /* data=*/ SDA, /* reset=*/ U8X8_PIN_NONE);
   U8G2_SSD1306_128X64_ALT0_F_HW_I2C u8g2(U8G2_R0, /* reset=*/ U8X8_PIN_NONE);   // same as the NONAME variant, but may solve the "every 2nd line skipped" problem
   u8g2.begin();
   u8g2.clearBuffer();

@@ -13,21 +13,16 @@ void Game::Init() {
   
   
   // Attendre jusqu'à ce qu'un des touch sensors soit activé
+  // Démarrer le jeu une fois qu'un touch sensor est activé
   bool isTouched = false;
   while (!isTouched) {
     if (_touch1.Touched1() || _touch2.Touched2() || _touch3.Touched3() || _touch4.Touched4()) {
       isTouched = true;
     }
     delay(1000); // Attendre 100 millisecondes avant de vérifier à nouveau
-  }
-  
-  // Démarrer le jeu une fois qu'un touch sensor est activé
-  //_ecran.EcranInGame(Score);
-  
-  //Initialisation de la LED matrix et des variables
-  // ...
+  } 
 }
-
+//Choisir le mode de jeu: Facile ou Difficile
 void Game::chooseMode() {
    bool touched1 = _touch1.Touched1();
    bool touched2 = _touch2.Touched2();
@@ -38,6 +33,7 @@ void Game::chooseMode() {
      mode = 1;
    }
 }
+ //Initialisation de la LED matrix et des variables et gerer l'affichage
  void GameFacile::AfficheMat(){
   int i=0;
   uint8_t pic3[]={0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,
@@ -50,15 +46,16 @@ void Game::chooseMode() {
                   0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,
                  };
   uint64_t* tableau;
-  i = random(3);
+  i = random(3); // i prendre aleatoirement valeur 0 1 2 3 correspondant a l'affichage aleatoirement des colonnes de MatrixLED
   if (Affiche == false) {
+    //On eteint la MatixLED au debut
     ecranLED.EteintTout();
     tableau = ecranLED.getTab();
     for(int i=0; i<64; i++){
       pic3[i] = tableau[i];
     }
     matrix.displayFrames(pic3, 2000, true, 1);
- 
+  // On allume les colonnes de MatrixLED correspondant au param "i"
     if(i==0){
       ecranLED.AllumerCase0();
     }else if(i==1){
@@ -80,8 +77,7 @@ void Game::chooseMode() {
 
 
 void GameFacile::updateGame() {  
-  // Code pour gérer le jeu en cours ici
- 
+ //Compteur pour gerer de delai du jeu
   compteur ++;
     
   _ecran.EcranInGame(Score);

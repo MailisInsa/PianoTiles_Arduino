@@ -1,10 +1,12 @@
 #include "TouchSensor.h"
+Setup touchsensor correspondant a chaque broche, les mettre en mode INPUT
 void TouchSensor :: setup() {
       pinMode(Pin1, INPUT);
       pinMode(Pin2, INPUT);
       pinMode(Pin3, INPUT);
       pinMode(Pin4, INPUT);
     }
+//Verifier si quelle TouchSensor est Touche. (Touched1 <=> le premier TouchSensor est touche)
 bool TouchSensor :: Touched1() {
       buttonState = digitalRead(Pin1);
 
