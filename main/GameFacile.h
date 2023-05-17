@@ -2,6 +2,9 @@
 #define GAMEFACILE_H
 
 #include "Game.h"
+#include <iostream>
+#include <vector>
+using namespace std;
 
 class GameFacile:public Game{
   public:
