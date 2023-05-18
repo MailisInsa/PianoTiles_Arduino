@@ -10,7 +10,6 @@ class TouchSensor{
     const int Pin2 = D6;
     const int Pin3 = D7;
     const int Pin4 = D8;
-    //PIN of LEDMatrix
   
     //Var
     int buttonState = 0;

@@ -27,26 +27,14 @@ void waitForMatrixReady() {
     delay(1000);
 }
 //Initialisation des variables globales
-//GameDifficile game;
-GameFacile game;
+GameDifficile game;
+//GameFacile game;
 GroveTwoRGBLedMatrixClass matrix;
 EcranLED ecran;
 
 void setup() {
-   Wire.begin();
-    SERIAL.begin(115200);
-    waitForMatrixReady();
-    uint16_t VID = 0;
-    VID = matrix.getDeviceVID();
-    if (VID != 0x2886) {
-        SERIAL.println("Can not detect led matrix!!!");
-        while (1);
-    }
-    uint32_t version = 0;
-    version = matrix.getTestVersion();
-    SERIAL.print("version = ");
-    SERIAL.println(version, HEX);
-    SERIAL.println("Matrix init success!!!");
+  Wire.begin();
+  SERIAL.begin(115200);
 }
 
 //MATRIX LED
@@ -59,7 +47,7 @@ uint8_t pic3[] = {0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,
                   0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,
                   0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,
                  };
-//Version utiliser std vector: a teste 
+//Version utiliser std vector: à tester 
 // std::vector<uint8_t> pic3 ={0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,
 //                   0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,
 //                   0xff, 0xff, 0x12, 0xff, 0xff, 0xff, 0xff, 0xff,

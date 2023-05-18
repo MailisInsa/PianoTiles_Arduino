@@ -51,12 +51,8 @@ void GameFacile::AfficheMat(){
                  };
   uint64_t* tableau;
   int n;  
-
-  //On initialise le vecteur v qui contiendra une valeur entre 0 et 3 pour indiquer quelle case allumer
-  std::vector<int> v;
-  for(int i=0; i<4; i++)
-    v.push_back(i);
   
+  //i = random(3); // i prend aleatoirement valeur 0 1 2 3 correspondant a l'affichage aleatoirement des colonnes de MatrixLED
   if (Affiche == false) {
     //On eteint la MatixLED au debut
     ecranLED.EteintTout();
@@ -65,21 +61,21 @@ void GameFacile::AfficheMat(){
       pic3[i] = tableau[i];
     }
     matrix.displayFrames(pic3, 2000, true, 1);
-    // On allume les colonnes de MatrixLED correspondant au param "i"
-    if(v[n]==0){
+    // On allume les colonnes de MatrixLED correspondant à la valeur dans le vecteur
+    if(v3[n]==0){
       ecranLED.AllumerCase0();
-    }else if(v[n]==1){
+    }else if(v3[n]==1){
       ecranLED.AllumerCase1();
-    }else if(v[n]==2){
+    }else if(v3[n]==2){
       ecranLED.AllumerCase2();
-    }else if(v[n]==3){
+    }else if(v3[n]==3){
       ecranLED.AllumerCase3();
     }
 
-    //Lorsqu'on a parcouru toutes les valeurs de v, on shuffle le vecteur pour changer l'ordre d'allumage des cases
-    if (n==3){
+    //On change aléatoirement l'ordre des entiers dans le vecteur v lorsqu'on a fait le tour de toutes ses valeurs
+    if (n==4){
       n=0;
-      std::random_shuffle(v.begin(),v.end());  
+      std::random_shuffle(v3.begin(),v3.end());  
     } else {n++;}
       
 

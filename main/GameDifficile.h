@@ -7,7 +7,10 @@
 
 class GameDifficile:public Game{
   public:
+  //Fonction pour la mise à jour du score
   void updateGame();
+
+  //Fonction pour la mise à jour des cases de LED
   void AfficheMat();
 };
 

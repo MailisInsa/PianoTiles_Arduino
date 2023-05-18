@@ -34,7 +34,6 @@ class EcranLED{
     void AllumerCase1();
     void AllumerCase2();
     void AllumerCase3();    
-    
 };
 
 

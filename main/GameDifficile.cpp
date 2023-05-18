@@ -46,7 +46,8 @@ void GameDifficile::AfficheMat(){
                   0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,
                  };
   uint64_t* tableau;
-  i = random(5);
+  int n;
+
   if (Affiche == false) {
     ecranLED.EteintTout();
     tableau = ecranLED.getTab();
@@ -55,21 +56,26 @@ void GameDifficile::AfficheMat(){
     }
     matrix.displayFrames(pic3, 2000, true, 1);
  
-    if(i==0){
+    if(v5[n]==0){
       ecranLED.AllumerCase0();
-    }else if(i==1){
+    }else if(v5[n]==1){
       ecranLED.AllumerCase1();
-    }else if(i==2){
+    }else if(v5[n]==2){
       ecranLED.AllumerCase2();
-    }else if(i==3){
+    }else if(v5[n]==3){
       ecranLED.AllumerCase3();
-    }else if(i==4){
+    }else if(v5[n]==4){
       ecranLED.AllumerCase1();
       ecranLED.AllumerCase3();
-    }else if(i==5){
+    }else if(v5[n]==5){
       ecranLED.AllumerCase0();
       ecranLED.AllumerCase2();
     }
+    //On change aléatoirement l'ordre des entiers dans le vecteur v lorsqu'on a fait le tour de toutes ses valeurs
+    if (n==6){
+      n=0;
+      std::random_shuffle(v5.begin(),v5.end());  
+    } else {n++;}
 
     tableau = ecranLED.getTab();
     for(int i=0; i<64; i++){

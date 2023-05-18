@@ -2,13 +2,14 @@
 #define GAMEFACILE_H
 
 #include "Game.h"
-#include <iostream>
-#include <vector>
-using namespace std;
+
 
 class GameFacile:public Game{
   public:
+  //Fonction pour la mise à jour du Score
   void updateGame();
+
+  //Fonction pour la mise à jour des cases de LED
   void AfficheMat();
 };
 
