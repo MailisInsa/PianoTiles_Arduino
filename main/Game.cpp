@@ -21,7 +21,7 @@ void Game::Init() {
   // Démarrer le jeu une fois qu'un touch sensor est activé
   bool isTouched = false;
   while (!isTouched) {
-    if (_touch1.Touched1() || _touch2.Touched2() || _touch3.Touched3() || _touch4.Touched4()) {
+    if (_touch1.Touched() || _touch2.Touched() || _touch3.Touched() || _touch4.Touched()) {
       isTouched = true;
     }
     delay(1000); // Attendre 1000 millisecondes avant de vérifier à nouveau
@@ -30,8 +30,8 @@ void Game::Init() {
 
 //Choisir le mode de jeu: Facile ou Difficile
 void Game::chooseMode() {
-   bool touched1 = _touch1.Touched1();
-   bool touched2 = _touch2.Touched2();
+   bool touched1 = _touch1.Touched();
+   bool touched2 = _touch2.Touched();
    if (touched1){
      mode = 0;
    }

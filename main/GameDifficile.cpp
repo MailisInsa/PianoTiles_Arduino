@@ -4,10 +4,10 @@ void GameDifficile::updateGame(){
   compteur ++;
     
   _ecran.EcranInGame(Score);
-  bool touched1 = _touch1.Touched1();
-  bool touched2 = _touch2.Touched2();
-  bool touched3 = _touch3.Touched3();
-  bool touched4 = _touch4.Touched4();
+  bool touched1 = _touch1.Touched();
+  bool touched2 = _touch2.Touched();
+  bool touched3 = _touch3.Touched();
+  bool touched4 = _touch4.Touched();
 
   // Vérifier si le joueur a appuyé sur le bon capteur tactile
   //&ecran.getDerniereCeolonne()->getLigne(0).EstAllume() //-> true si la case 0 est allumée

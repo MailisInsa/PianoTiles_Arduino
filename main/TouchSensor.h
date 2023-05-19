@@ -4,7 +4,7 @@
 #define _TOUCHSENSOR_H_
 
 class TouchSensor{
-  public:
+  private:
     //PIN of TouchSensor
     const int Pin1 = D5; 
     const int Pin2 = D6;
@@ -17,6 +17,7 @@ class TouchSensor{
     int buttonState2 = 0;
     int buttonState3 = 0;
 
+  public:
     //Setup
     void setup();
     bool Touched1();

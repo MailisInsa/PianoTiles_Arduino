@@ -2,7 +2,7 @@
 #define GAME_H
 
 #include <Arduino.h>
-#include "TouchSensor.h"
+#include "TouchSensor_Copie.h"
 #include "Ecran.h"
 #include "ecranLED.h"
 #include "grove_two_rgb_led_matrix.h"
@@ -14,10 +14,10 @@ using namespace std;
 class Game {
   protected:
     //Les différents boutons
-    TouchSensor _touch1;
-    TouchSensor _touch2;
-    TouchSensor _touch3;
-    TouchSensor _touch4;
+    TouchSensorCopie _touch1{D5};
+    TouchSensorCopie _touch2{D6};
+    TouchSensorCopie _touch3{D7};
+    TouchSensorCopie _touch4{D8};
 
     //L'écran d'affichage des messages de score et d'instructions
     Ecran _ecran;
@@ -32,19 +32,19 @@ class Game {
     //vecteurs utilisés pour modifier aléatoirement l'ordre d'allumage des cases
     std::vector<int> v3;
     std::vector<int> v5;
-
-  public:
+    
     //Variable correspondant au mode de difficulté
     int mode;
 
     //Score du joueur
     int Score;
 
-    //Booléen pour savoir si la partie est perdue
-    bool Over;
-
     //Variable pour savoir si la matrice de LED affiche ou non des cases
     bool Affiche;
+    
+  public:
+    //Booléen pour savoir si la partie est perdue
+    bool Over;
 
     //Fonction pour l'initialisation du jeu
     void Init();
