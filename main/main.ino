@@ -1,7 +1,7 @@
 #include "Game.h"
 #include "GameDifficile.h"
 #include "GameFacile.h"
-#include "TouchSensor_Copie.h"
+#include "TouchSensor.h"
 #include "Ecran.h"
 #include "grove_two_rgb_led_matrix.h"
 #include "caseLED.h"

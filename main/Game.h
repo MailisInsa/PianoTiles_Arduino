@@ -2,7 +2,7 @@
 #define GAME_H
 
 #include <Arduino.h>
-#include "TouchSensor_Copie.h"
+#include "TouchSensor.h"
 #include "Ecran.h"
 #include "ecranLED.h"
 #include "grove_two_rgb_led_matrix.h"
@@ -14,10 +14,10 @@ using namespace std;
 class Game {
   protected:
     //Les différents boutons
-    TouchSensorCopie _touch1{D5};
-    TouchSensorCopie _touch2{D6};
-    TouchSensorCopie _touch3{D7};
-    TouchSensorCopie _touch4{D8};
+    TouchSensor _touch1{D5};
+    TouchSensor _touch2{D6};
+    TouchSensor _touch3{D7};
+    TouchSensor _touch4{D8};
 
     //L'écran d'affichage des messages de score et d'instructions
     Ecran _ecran;
